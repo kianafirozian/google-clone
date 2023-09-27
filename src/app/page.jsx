@@ -1,6 +1,16 @@
-import Head from "next/head";
-import React from "react";
+import HomeHeader from "@/components/HomeHeader";
+
+export const metadata = {
+  title: "google Clone",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
 
 export default function home() {
-  return <div className="text-red-800 text-3xl">hello world</div>;
+  return (
+    <>
+      <HomeHeader />
+    </>
+  );
 }
