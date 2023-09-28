@@ -14,10 +14,7 @@ export default function HomeHeader() {
           Image
         </Link>
         <TbGridDots className="bg-transparent hover:bg-gray-200 rounded-full text-4xl p-2" />
-        <button
-          onClick={(e) => setSearch(e.target.value)}
-          className="bg-blue-500 text-white px-6 py-2 cursor-pointer font-medium rounded-md hover:brightness-105 hover:shadow-md transition-shadow"
-        >
+        <button className="bg-blue-500 text-white px-6 py-2 cursor-pointer font-medium rounded-md hover:brightness-105 hover:shadow-md transition-shadow">
           Sign in
         </button>
       </div>
