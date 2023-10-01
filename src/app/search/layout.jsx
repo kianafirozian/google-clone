@@ -1,6 +1,6 @@
 import "./../globals.css";
 import SearchHeader from "@/components/SearchHeader";
-// children is page.jsx
+// in this layout we have a header for image and web page common in search folder
 
 export default function SearchLayout({ children }) {
   return (
