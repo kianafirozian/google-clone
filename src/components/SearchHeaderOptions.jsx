@@ -9,7 +9,7 @@ export default function SearchHeaderOptions() {
   const searchTerm = searchParams.get("searchTerm");
   const selectTab = (tab) => {
     router.push(
-      `/search/${tab === "images" ? "image" : "web"}?searchTerm=${searchTerm} `
+      `/search/${tab === "Images" ? "image" : "web"}?searchTerm=${searchTerm} `
     );
   };
   return (
