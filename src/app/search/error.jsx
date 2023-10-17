@@ -1,4 +1,5 @@
 "use client";
+// error page should be client side
 import { useEffect } from "react";
 
 export default function Error({ error, reset }) {

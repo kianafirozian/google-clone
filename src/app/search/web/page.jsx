@@ -1,7 +1,16 @@
+import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
+
+export const metadata = {
+  title: "google Clone",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
 
 // we change the function to ASYNC so that we can fetch our data with await so it becomes server side rendering
 export default async function WebSearchPage({ searchParams }) {
+  await new Promise((resovle) => setTimeout(resovle, 10000));
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}`
   );
@@ -11,10 +20,12 @@ export default async function WebSearchPage({ searchParams }) {
   }
 
   const data = await response.json();
+
   const results = data.items;
 
   // console.log(data);
 
+  // this error is for the time that the word doesn't exist
   if (!results) {
     return (
       <div className="flex flex-col justify-center items-center pt-10">
@@ -29,10 +40,5 @@ export default async function WebSearchPage({ searchParams }) {
     );
   }
 
-  return (
-    <>
-      {results &&
-        results.map((result) => <h1 key={result.id}>{result.title}</h1>)}
-    </>
-  );
+  return <>{results && <WebSearchResults results={data} />}</>;
 }
