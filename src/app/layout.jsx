@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { Suspense } from "react";
-import Loading from "./search/web/loading";
+import Loading from "./search/web/loadinggg";
 // children is page.jsx
 
 export default function RootLayout({ children }) {
